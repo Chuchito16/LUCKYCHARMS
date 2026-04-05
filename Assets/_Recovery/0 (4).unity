@@ -217,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 378407161}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 401.69632, y: 157.35812, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -406,9 +406,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 48
+  field of view: 60
   orthographic: 1
-  orthographic size: 70
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -433,8 +433,8 @@ Transform:
   m_GameObject: {fileID: 1059981133}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -168}
-  m_LocalScale: {x: 1, y: -318.5, z: 1}
+  m_LocalPosition: {x: 30, y: 52, z: -168}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Board
   width: 9
   height: 9
-  cellSize: 15
+  cellSize: 25
   candyPrefabs:
   - {fileID: 877450514123538110, guid: c96ea8ba6d4e5ee40aed5a76c6877a24, type: 3}
   - {fileID: 1485213796824248544, guid: c2dab0243899bf54da0da140a0f8a653, type: 3}
