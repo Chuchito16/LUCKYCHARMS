@@ -21,13 +21,13 @@ MonoBehaviour:
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
     modelTargetRecoWhileExtendedTracked: 1
-    version: 11.4.4
+    version: 8.5.9
     eulaAcceptedVersions: '{"Values":["","0.0","11.4","8.5"]}'
   database:
     disableModelExtraction: 0
   videoBackground:
     numDivisions: 2
-    videoBackgroundShader: {fileID: 4800000, guid: 144dfca22ac584ade9e538e24a5ddded, type: 3}
+    videoBackgroundShader: {fileID: 4800000, guid: f40623b353e2f1943b1b3ba42975db7a, type: 3}
     videoBackgroundEnabled: 1
   deviceTracker:
     autoInitTracker: 0
