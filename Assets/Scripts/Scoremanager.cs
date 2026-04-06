@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     public Slider progressBar;
 
     [Header("Level Settings")]
-    public int targetScore = 1000;
+    public int targetScore = 10000;
     public int movesLeft = 30;
 
     private int currentScore = 0;
@@ -81,7 +81,7 @@ public class ScoreManager : MonoBehaviour
     void UpdateUI()
     {
         if (scoreText) scoreText.text = currentScore.ToString("N0");
-        if (highScoreText) highScoreText.text = "Best: " + highScore.ToString("N0");
+        if (highScoreText) highScoreText.text = " " + highScore.ToString("N0");
         if (movesText) movesText.text = movesLeft.ToString();
         if (progressBar) progressBar.value = (float)currentScore / targetScore;
     }
