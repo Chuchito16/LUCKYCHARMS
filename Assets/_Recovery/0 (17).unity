@@ -884,7 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -908,7 +908,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904981303}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &942989937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   - {fileID: 3420394420578221216, guid: 1851bd01ee4673e4fb7d2614664f526f, type: 3}
   - {fileID: 877450514123538110, guid: c96ea8ba6d4e5ee40aed5a76c6877a24, type: 3}
   - {fileID: 408579498274983702, guid: 0e44d234d7e596448825de18640f8731, type: 3}
-  - {fileID: 8567532857147366990, guid: 00ea5c0ef63499d4cb5c758a772fbe15, type: 3}
+  - {fileID: 1527430101736832882, guid: 8cba64be419859a4a9281ad357a39157, type: 3}
   destroyEffectPrefab: {fileID: 7492916179484447041, guid: 72a8b44673903a14f9b228c75cd088c3, type: 3}
 --- !u!4 &1145958289
 Transform:
