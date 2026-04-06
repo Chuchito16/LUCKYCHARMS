@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
@@ -10,12 +10,12 @@ public class ScoreManager : MonoBehaviour
     [Header("UI References")]
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI movesText;
     public Slider progressBar;
 
     [Header("Level Settings")]
     public int targetScore = 1000;
     public int movesLeft = 30;
-    public TextMeshProUGUI movesText;
 
     private int currentScore = 0;
     private int highScore = 0;
@@ -29,11 +29,14 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         UpdateUI();
+        Debug.Log("✅ ScoreManager iniciado correctamente.");
     }
 
     public void AddScore(int points)
     {
         currentScore += points;
+        Debug.Log($"🍬 +{points} puntos → Total: {currentScore}");
+
         if (currentScore > highScore)
         {
             highScore = currentScore;
@@ -49,26 +52,20 @@ public class ScoreManager : MonoBehaviour
     {
         movesLeft--;
         UpdateUI();
+        Debug.Log($"Movimientos restantes: {movesLeft}");
         if (movesLeft <= 0 && currentScore < targetScore)
-        {
-            // Game Over
             GameOver();
-        }
     }
 
     void CheckWin()
     {
         if (currentScore >= targetScore)
-        {
-            Debug.Log("�NIVEL COMPLETADO!");
-            // Aqu� puedes cargar siguiente nivel o mostrar panel de victoria
-        }
+            Debug.Log("🏆 ¡NIVEL COMPLETADO!");
     }
 
     void GameOver()
     {
-        Debug.Log("GAME OVER");
-        // Mostrar panel de game over
+        Debug.Log("💀 GAME OVER");
     }
 
     IEnumerator AnimateScore()

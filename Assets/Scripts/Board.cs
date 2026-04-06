@@ -18,9 +18,6 @@ public class Board : MonoBehaviour
     [Header("Effects")]
     public GameObject destroyEffectPrefab;
 
-    [Header("References")]
-    public ScoreManager scoreManager;
-
     private Candy[,] candies;
     private bool isProcessing = false;
 
@@ -78,9 +75,24 @@ public class Board : MonoBehaviour
     {
         int type = GetValidCandyType(x, y);
         Vector3 pos = GetWorldPosition(x, y);
+
+        if (candyPrefabs[type] == null)
+        {
+            Debug.LogError($"❌ El prefab en el slot {type} es null. Asígnalo en el Inspector del Board.");
+            return;
+        }
+
         GameObject go = Instantiate(candyPrefabs[type], pos, Quaternion.identity, transform);
-        go.name = $"Candy_{x}_{y}";
+        go.name = $"Candy_{x}_{y}_Type{type}";
+
         Candy candy = go.GetComponent<Candy>();
+        if (candy == null)
+        {
+            Debug.LogError($"❌ El prefab '{candyPrefabs[type].name}' (slot {type}) NO tiene el script Candy adjunto.");
+            Destroy(go);
+            return;
+        }
+
         candy.Init(x, y, type);
         candies[x, y] = candy;
     }
@@ -157,7 +169,7 @@ public class Board : MonoBehaviour
         List<Candy> matches = FindAllMatches();
         if (matches.Count > 0)
         {
-            scoreManager?.UseMove();
+            ScoreManager.instance?.UseMove();
             yield return StartCoroutine(ProcessMatches(matches));
         }
         else
@@ -262,7 +274,7 @@ public class Board : MonoBehaviour
     IEnumerator ProcessMatches(List<Candy> matches)
     {
         int points = matches.Count * 50;
-        scoreManager?.AddScore(points);
+        ScoreManager.instance?.AddScore(points);
 
         foreach (Candy c in matches)
         {
