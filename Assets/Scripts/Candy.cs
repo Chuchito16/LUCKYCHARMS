@@ -7,9 +7,9 @@
 [RequireComponent(typeof(SpriteRenderer))]
 public class Candy : MonoBehaviour
 {
-    [HideInInspector] public int xIndex;
-    [HideInInspector] public int yIndex;
-    [HideInInspector] public int candyType;
+    [System.NonSerialized] public int xIndex;
+    [System.NonSerialized] public int yIndex;
+    [System.NonSerialized] public int candyType;
 
     private SpriteRenderer sr;
     private Vector3 originalScale;
