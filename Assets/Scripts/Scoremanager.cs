@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
     public Slider progressBar;
 
     [Header("Level Settings")]
-    public int targetScore = 10000;
+    public int targetScore = 1000;
     public int movesLeft = 30;
 
     private int currentScore = 0;
@@ -57,15 +57,27 @@ public class ScoreManager : MonoBehaviour
             GameOver();
     }
 
+    [Header("Panels")]
+    public GameObject winPanel;
+
     void CheckWin()
     {
         if (currentScore >= targetScore)
+        {
             Debug.Log("🏆 ¡NIVEL COMPLETADO!");
+            if (winPanel != null) winPanel.SetActive(true);
+        }
     }
 
     void GameOver()
     {
         Debug.Log("💀 GAME OVER");
+    }
+
+    public void RestartLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     IEnumerator AnimateScore()
